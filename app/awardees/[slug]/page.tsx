@@ -81,6 +81,10 @@ interface Props {
 
 // Make the component async to fetch data server-side
 export default async function AwardeeProfile({ params }: Props) {
+    const slug = params?.slug;
+    if (!slug) {
+        return <div>Error: Slug tidak ditemukan.</div>;
+    }
     const awardee = await getAwardeeBySlug(params.slug);
 
     if (!awardee) {
@@ -90,7 +94,7 @@ export default async function AwardeeProfile({ params }: Props) {
                 <main className="my-10 flex-1 flex items-center justify-center">
                     <div className="text-center">
                         <h1 className="text-2xl font-bold mb-4">Data tidak tersedia</h1>
-                        <p className="text-muted-foreground mb-6">Awardee yang kamu cari tidak ditemukan.</p>
+                        <p className="text-muted-foreground mb-6">Data awardee yang kamu cari tidak ditemukan.</p>
                         <Button asChild>
                             <Link href="/awardees">Kembali</Link>
                         </Button>
