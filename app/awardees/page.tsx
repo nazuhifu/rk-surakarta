@@ -1,6 +1,8 @@
+// ./awardee/page.tsx
 'use client';
 
 import Image from "next/image";
+import Link from "next/link"; // Import Link
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { GraduationCap, Search } from "lucide-react";
@@ -15,6 +17,9 @@ interface Awardee {
   program?: string | null;
   year?: string | null;
   imageUrl: string;
+  slug?: {
+    current?: string;
+  };
 }
 
 async function getAwardees(): Promise<Awardee[]> {
@@ -26,7 +31,8 @@ async function getAwardees(): Promise<Awardee[]> {
         role,
         program,
         year,
-        image
+        image,
+        slug
       }
     `);
 
@@ -103,6 +109,7 @@ export default function AwardeesPage() {
                       program={awardee.program}
                       year={awardee.year}
                       image={awardee.imageUrl}
+                      slug={awardee.slug?.current} // Kirim slug ke AwardeeCard
                     />
                   ))}
                 </div>
@@ -126,23 +133,26 @@ interface AwardeeCardProps {
   program?: string | null;
   year?: string | null;
   image: string;
+  slug?: string; // Terima properti slug
 }
 
-function AwardeeCard({ name, role, program, year, image }: AwardeeCardProps) {
+function AwardeeCard({ name, role, program, year, image, slug }: AwardeeCardProps) {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all group">
-      <div className="relative h-64 overflow-hidden">
-        <Image src={image || "/placeholder.svg"} alt={name || "Awardee Image"} fill className="object-cover transition-transform group-hover:scale-105" />
-        <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-medium px-2 py-1 rounded">{year}</div>
-      </div>
-      <div className="p-6">
-        <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">{name || "Nama Tidak Tersedia"}</h3>
-        <p className="text-muted-foreground text-sm mb-2">{role || "Role Tidak Tersedia"}</p>
-        <div className="flex items-center gap-2">
-          <GraduationCap className="h-4 w-4 text-primary" />
-          <span className="text-sm">{program || "Program Tidak Tersedia"}</span>
+    <Link href={`/awardees/${slug}`}> {/* Gunakan Link untuk navigasi */}
+      <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all group cursor-pointer"> {/* Tambahkan cursor-pointer */}
+        <div className="relative h-64 overflow-hidden">
+          <Image src={image || "/placeholder.svg"} alt={name || "Awardee Image"} fill className="object-cover transition-transform group-hover:scale-105" />
+          <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-medium px-2 py-1 rounded">{year}</div>
+        </div>
+        <div className="p-6">
+          <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">{name || "Nama Tidak Tersedia"}</h3>
+          <p className="text-muted-foreground text-sm mb-2">{role || "Role Tidak Tersedia"}</p>
+          <div className="flex items-center gap-2">
+            <GraduationCap className="h-4 w-4 text-primary" />
+            <span className="text-sm">{program || "Program Tidak Tersedia"}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
