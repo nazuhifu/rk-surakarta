@@ -81,11 +81,8 @@ interface Props {
 
 // Make the component async to fetch data server-side
 export default async function AwardeeProfile({ params }: Props) {
-    const slug = params?.slug;
-    if (!slug) {
-        return <div>Error: Slug tidak ditemukan.</div>;
-    }
-    const awardee = await getAwardeeBySlug(params.slug);
+    const { slug } = await params;
+    const awardee = await getAwardeeBySlug(slug);
 
     if (!awardee) {
         return (

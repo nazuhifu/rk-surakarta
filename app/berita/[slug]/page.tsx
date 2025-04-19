@@ -43,7 +43,7 @@ export async function getBeritaBySlug(slug: string): Promise<Berita | undefined>
 }
 
 export default async function BeritaDetailPage({ params }: Params) {
-    const slug = params.slug;
+    const { slug } = await params;
     const berita = await getBeritaBySlug(slug);
 
     if (!berita) {
