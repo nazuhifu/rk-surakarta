@@ -87,9 +87,9 @@ export default async function AwardeeProfile({ params }: Props) {
         return (
             <div className="flex flex-col min-h-screen">
                 <Navbar />
-                <main className="flex-1 flex items-center justify-center">
+                <main className="my-10 flex-1 flex items-center justify-center">
                     <div className="text-center">
-                        <h1 className="text-2xl font-bold mb-4">Ga ada</h1>
+                        <h1 className="text-2xl font-bold mb-4">Data tidak tersedia</h1>
                         <p className="text-muted-foreground mb-6">Awardee yang kamu cari tidak ditemukan.</p>
                         <Button asChild>
                             <Link href="/awardees">Kembali</Link>
@@ -322,22 +322,4 @@ interface RelatedAwardeeCardProps {
     year?: string | null;
     image: string;
     slug?: string;
-}
-
-function RelatedAwardeeCard({ name, university, program, year, image, slug }: RelatedAwardeeCardProps) {
-    return (
-        <Link href={`/awardees/${slug}`}>
-            <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all group cursor-pointer">
-                <div className="relative h-48 overflow-hidden">
-                    <Image src={image || "/placeholder.svg"} alt={name || "Related Awardee Image"} fill className="object-cover transition-transform group-hover:scale-105" />
-                    <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-medium px-2 py-1 rounded">{year}</div>
-                </div>
-                <div className="p-4">
-                    <h3 className="font-semibold text-md mb-1 group-hover:text-primary transition-colors">{name || "Nama Tidak Tersedia"}</h3>
-                    <p className="text-muted-foreground text-sm mb-1">{program || "Program Tidak Tersedia"}</p>
-                    {university && <p className="text-muted-foreground text-xs">{university}</p>}
-                </div>
-            </div>
-        </Link>
-    );
 }
