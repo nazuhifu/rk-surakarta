@@ -81,7 +81,7 @@ export default async function BeritaDetailPage({ params }: Params) {
                     </Link>
                 </div>
 
-                <h1 className="text-3xl font-bold mb-4">{berita.title}</h1>
+                <h1 className="text-2xl md:text-3xl font-bold mb-4">{berita.title}</h1>
                 <div className="flex items-center text-sm text-muted-foreground mb-6 gap-4">
                     <span className="flex items-center">
                         <Calendar className="w-4 h-4 mr-1" />
