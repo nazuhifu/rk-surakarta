@@ -1,8 +1,6 @@
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Calendar } from "lucide-react";
@@ -55,7 +53,6 @@ export default async function BeritaDetailPage({ params }: Params) {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="py-12 container max-w-3xl">
                 <div className="mb-6">
                     <Link href="/berita" className="text-primary hover:underline">
@@ -88,7 +85,6 @@ export default async function BeritaDetailPage({ params }: Params) {
 
                 <ShareButtons title={beritaTitle} url={beritaUrl} />
             </main>
-            <Footer />
         </div>
     );
 }

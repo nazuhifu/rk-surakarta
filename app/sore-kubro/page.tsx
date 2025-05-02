@@ -1,15 +1,12 @@
 "use client";
 
 import { useEffect } from "react";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Moon } from "lucide-react";
 import Link from "next/link";
 import AyatCard from "@/components/ayat-card";
-import BackToTopButton from "@/components/back-to-top-button";
 
-export default function PagiKubro() {
+export default function SoreKubro() {
     // Initialize scroll reveal on component mount
     useEffect(() => {
         const reveal = () => {
@@ -30,7 +27,6 @@ export default function PagiKubro() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-1">
                 {/* Hero Section */}
                 <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent">
@@ -632,10 +628,7 @@ export default function PagiKubro() {
                         </div>
                     </div>
                 </section>
-
-                <BackToTopButton />
             </main>
-            <Footer />
         </div>
     );
 }

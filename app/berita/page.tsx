@@ -7,8 +7,6 @@ import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText } from "@portabletext/react";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { ArrowRight, Calendar, Users } from "lucide-react";
 import SearchInput from "@/components/search-input";
 import { portableTextComponents } from "@/components/portable-text-components";
@@ -80,7 +78,6 @@ export default function BeritaPage() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-1">
                 <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-white dark:from-primary/10 dark:to-background border-b">
                     <div className="container text-center">
@@ -209,7 +206,6 @@ export default function BeritaPage() {
                     </section>
                 )}
             </main>
-            <Footer />
         </div>
     );
 }
