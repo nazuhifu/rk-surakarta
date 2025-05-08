@@ -48,8 +48,18 @@ export function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>
+                <Link href="/pagi-sughro" className="w-full">
+                  Pagi Sughro
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
                 <Link href="/pagi-kubro" className="w-full">
                   Pagi Kubro
+                </Link>
+              </DropdownMenuItem>
+              <DropdownMenuItem>
+                <Link href="/sore-sughro" className="w-full">
+                  Sore Sughro
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem>
