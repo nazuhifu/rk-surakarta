@@ -150,3 +150,12 @@ html {
   opacity: 0;
   transition: opacity 700ms ease-in-out;
 }
+
+@font-face {
+  font-family: 'Uthmanic';
+  src: url('/fonts/KFGQPCUthmanicScriptHAFSRegular.otf') format('opentype');
+}
+
+.font-arabic {
+  font-family: 'Uthmanic', serif;
+}

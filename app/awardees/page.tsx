@@ -2,9 +2,7 @@
 'use client';
 
 import Image from "next/image";
-import Link from "next/link"; // Import Link
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import Link from "next/link";
 import { GraduationCap, Search } from "lucide-react";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
@@ -55,7 +53,7 @@ export default function AwardeesPage() {
     const fetchAndSetAwardees = async () => {
       const awardeesData = await getAwardees();
       setAllAwardees(awardeesData);
-      setFilteredAwardees(awardeesData); // Initialize filteredAwardees after data is fetched
+      setFilteredAwardees(awardeesData);
     };
 
     fetchAndSetAwardees();
@@ -75,7 +73,6 @@ export default function AwardeesPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
       <main className="flex-1">
         {/* Hero Section */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-white dark:from-primary/20 dark:to-background border-b">
@@ -122,7 +119,6 @@ export default function AwardeesPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }
@@ -133,12 +129,12 @@ interface AwardeeCardProps {
   program?: string | null;
   year?: string | null;
   image: string;
-  slug?: string; // Terima properti slug
+  slug?: string;
 }
 
 function AwardeeCard({ name, role, program, year, image, slug }: AwardeeCardProps) {
   return (
-    <Link href={`/awardees/${slug}`}> {/* Gunakan Link untuk navigasi */}
+    <Link href={`/awardees/${slug}`}>
       <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all group cursor-pointer"> {/* Tambahkan cursor-pointer */}
         <div className="relative h-64 overflow-hidden">
           <Image src={image || "/placeholder.svg"} alt={name || "Awardee Image"} fill className="object-cover transition-transform group-hover:scale-105" />

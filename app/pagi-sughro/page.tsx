@@ -6,7 +6,7 @@ import { ArrowLeft, ArrowRight, Sun } from "lucide-react";
 import Link from "next/link";
 import AyatCard from "@/components/ayat-card";
 
-export default function PagiKubro() {
+export default function PagiSughro() {
     // Initialize scroll reveal on component mount
     useEffect(() => {
         const reveal = () => {
@@ -32,7 +32,7 @@ export default function PagiKubro() {
                 <section className="py-12 md:py-16 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent">
                     <div className="container text-center">
                         <div className="inline-block px-3 py-1 rounded-full bg-primary/10 dark:bg-primary/100 text-primary dark:text-foreground text-sm font-medium mb-2">Al-Matsurat</div>
-                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">Al-Matsurat Pagi Kubro</h1>
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">Al-Matsurat Pagi Sughro</h1>
                         <p className="text-md md:text-xl text-muted-foreground mb-6">Kumpulan doa dan dzikir pagi hari yang dianjurkan untuk dibaca setiap pagi.</p>
                         <div className="flex flex-wrap justify-center gap-4">
                             <Button className="bg-primary hover:bg-primary/90">
@@ -40,7 +40,7 @@ export default function PagiKubro() {
                                 Al-Matsurat Pagi
                             </Button>
                             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-                                <Link href="/sore-kubro" className="flex items-center">
+                                <Link href="/sore-sughro" className="flex items-center">
                                     <ArrowRight className="mr-2 h-4 w-4" />
                                     Al-Matsurat Sore
                                 </Link>
@@ -154,214 +154,6 @@ export default function PagiKubro() {
                                     repeat={1}
                                     arabicText="لَا يُكَلِّفُ ٱللَّهُ نَفۡسًا إِلَّا وُسۡعَهَاۚ لَهَا مَا كَسَبَتۡ وَعَلَيۡهَا مَا ٱكۡتَسَبَتۡۗ رَبَّنَا لَا تُؤَاخِذۡنَآ إِن نَّسِينَآ أَوۡ أَخۡطَأۡنَاۚ رَبَّنَا وَلَا تَحۡمِلۡ عَلَيۡنَآ إِصۡرٗا كَمَا حَمَلۡتَهُۥ عَلَى ٱلَّذِينَ مِن قَبۡلِنَاۚ رَبَّنَا وَلَا تُحَمِّلۡنَا مَا لَا طَاقَةَ لَنَا بِهِۦۖ وَٱعۡفُ عَنَّا وَٱغۡفِرۡ لَنَا وَٱرۡحَمۡنَآۚ أَنتَ مَوۡلَىٰنَا فَٱنصُرۡنَا عَلَى ٱلۡقَوۡمِ ٱلۡكَٰفِرِينَ"
                                     translation='Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya. Ia mendapat pahala (dari kebajikan) yang diusahakannya dan ia mendapat siksa (dari kejahatan) yang dikerjakannya. (Mereka berdo`a): "Ya Tuhan kami, janganlah Engkau hukum kami jika kami lupa atau kami tersalah. Ya Tuhan kami, janganlah Engkau bebankan kepada kami beban yang berat sebagaimana Engkau bebankan kepada orang-orang yang sebelum kami. Ya Tuhan kami, janganlah Engkau pikulkan kepada kami apa yang tak sanggup kami memikulnya. Beri maaflah kami; ampunilah kami; dan rahmatilah kami. Engkaulah Penolong kami, maka tolonglah kami terhadap kaum yang kafir".'
-                                />
-                                <AyatCard
-                                    title="Ali Imran"
-                                    repeat={1}
-                                    arabicText="بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ"
-                                    translation="Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang."
-                                    centered
-                                />
-                                <AyatCard
-                                    title="Ali Imran Ayat 1"
-                                    repeat={1}
-                                    arabicText="الٓمٓ"
-                                    translation="Alif Lam Mim."
-                                />
-                                <AyatCard
-                                    title="Ali Imran Ayat 2"
-                                    repeat={1}
-                                    arabicText="ٱللَّهُ لَآ إِلَٰهَ إِلَّا هُوَ ٱلۡحَيُّ ٱلۡقَيُّومُ"
-                                    translation="Allah, tidak ada Tuhan (yang berhak disembah) melainkan Dia. Yang Hidup kekal lagi terus menerus mengurus makhluk-Nya."
-                                />
-                                <AyatCard
-                                    title="Thoha Ayat 111"
-                                    repeat={1}
-                                    arabicText="وَعَنَتِ ٱلۡوُجُوهُ لِلۡحَيِّ ٱلۡقَيُّومِۖ وَقَدۡ خَابَ مَنۡ حَمَلَ ظُلۡمٗا"
-                                    translation="Dan tunduklah semua muka (dengan berendah diri) kepada Tuhan Yang Hidup Kekal lagi senantiasa mengurus (makhluk-Nya). Dan sesungguhnya telah merugilah orang yang melakukan kelaliman."
-                                />
-                                <AyatCard
-                                    title="Thoha Ayat 112"
-                                    repeat={1}
-                                    arabicText="وَمَن يَعۡمَلۡ مِنَ ٱلصَّٰلِحَٰتِ وَهُوَ مُؤۡمِنٞ فَلَا يَخَافُ ظُلۡمٗا وَلَا هَضۡمٗا"
-                                    translation="Dan barang siapa mengerjakan amal-amal yang saleh dan ia dalam keadaan beriman, maka ia tidak khawatir akan perlakuan yang tidak adil (terhadapnya) dan tidak (pula) akan pengurangan haknya."
-                                />
-                                <AyatCard
-                                    title="At-Taubah Ayat 129"
-                                    repeat={7}
-                                    arabicText="حَسۡبِيَ ٱللَّهُ لَآإِلَٰهَ إِلَّاهُوَۖ عَلَيۡهِ تَوَكَّلۡتُۖ وَهُوَ رَبُّ ٱلۡعَرۡشِ ٱلۡعَظِيمِ"
-                                    translation='"Cukuplah Allah bagiku; tidak ada Tuhanselain Dia. Hanya kepada-Nya aku bertawakal dan Dia adalah Tuhan yang memiliki Arasy yang agung".'
-                                />
-                                <AyatCard
-                                    title="Al-Isra Ayat 110"
-                                    repeat={1}
-                                    arabicText="قُلِ ٱدۡعُواْ ٱللَّهَ أَوِ ٱدۡعُواْ ٱلرَّحۡمَٰنَۖ أَيّٗا مَّا تَدۡعُواْ فَلَهُ ٱلۡأَسۡمَآءُ ٱلۡحُسۡنَىٰۚ وَلَاتَجۡهَرۡ بِصَلَاتِكَ وَلَا تُخَافِتۡ بِهَا وَٱبۡتَغِ بَيۡنَ ذَٰلِكَ سَبِيلٗا"
-                                    translation='Katakanlah: "Serulah Allah atau serulahAr-Rahman. Dengan nama yang mana saja kamu seru, Diamempunyai al asmaaulhusna (nama-nama yang terbaik)dan janganlah kamu mengeraskan suaramu dalam salatmudan janganlah pula merendahkannya dan carilah jalantengah di antara kedua itu".'
-                                />
-                                <AyatCard
-                                    title="Al-Isra Ayat 111"
-                                    repeat={1}
-                                    arabicText="وَقُلِ ٱلۡحَمۡدُ لِلَّهِ ٱلَّذِي لَمۡ يَتَّخِذۡ وَلَدٗا وَلَمۡ يَكُن لَّهُۥ شَرِيكٞ فِي ٱلۡمُلۡكِ وَلَمۡ يَكُن لَّهُۥ وَلِيّٞ مِّنَ ٱلذُّلِّۖ وَكَبِّرۡهُ تَكۡبِيرَۢا"
-                                    translation='Dan katakanlah: "Segala puji bagi AllahYang tidak mempunyai anak dan tidak mempunyai sekutudalam kerajaan-Nya dan Dia bukan pula hina yangmemerlukan penolong dan agungkanlah Dia denganpengagungan yang sebesar-besarnya.'
-                                />
-                                <AyatCard
-                                    title="Al-Mu'minun Ayat 115"
-                                    repeat={1}
-                                    arabicText='أَفَحَسِبۡتُمۡ أَنَّمَا خَلَقۡنَٰكُمۡ عَبَثٗا وَأَنَّكُمۡ إِلَيۡنَا لَا تُرۡجَعُونَ'
-                                    translation='Maka apakah kamu mengira, bahwa sesungguhnya Kami menciptakan kamu secara main-main (saja), dan bahwa kamu tidak akan dikembalikan kepada Kami?.'
-                                />
-                                <AyatCard
-                                    title="Al-Mu'minun Ayat 116"
-                                    repeat={1}
-                                    arabicText='فَتَعَٰلَى ٱللَّهُ ٱلۡمَلِكُ ٱلۡحَقُّۖ لَآ إِلَٰهَ إِلَّا هُوَ رَبُّ ٱلۡعَرۡشِ ٱلۡكَرِيمِ'
-                                    translation='Maka Maha Tinggi Allah, Raja Yang Sebenarnya; tidak ada Tuhan (yang berhak disembah) selain Dia, Tuhan (Yang mempunyai) Arasy yang mulia.'
-                                />
-                                <AyatCard
-                                    title="Al-Mu'minun Ayat 117"
-                                    repeat={1}
-                                    arabicText='وَمَن يَدۡعُ مَعَ ٱللَّهِ إِلَٰهًا ءَاخَرَلَابُرۡهَٰنَ لَهُۥ بِهِۦ فَإِنَّمَا حِسَابُهُۥ عِندَ رَبِّهِۦٓۚ إِنَّهُۥلَايُفۡلِحُ ٱلۡكَٰفِرُونَ'
-                                    translation='Dan barang siapa menyembah tuhan yang lain di samping Allah, padahal tidak ada suatu dalil pun baginya tentang itu, maka sesungguhnya perhitungannya di sisi Tuhannya. Sesungguhnya orang-orang yang kafir itu tiada beruntung.'
-                                />
-                                <AyatCard
-                                    title="Al-Mu'minun Ayat 116"
-                                    repeat={1}
-                                    arabicText='وَقُل رَّبِّ ٱغۡفِرۡ وَٱرۡحَمۡ وَأَنتَ خَيۡرُ ٱلرَّٰحِمِينَ'
-                                    translation='Dan katakanlah: "Ya Tuhanku berilah ampun dan berilah rahmat, dan Engkau adalah Pemberi rahmat Yang Paling baik.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 17"
-                                    repeat={1}
-                                    arabicText='فَسُبۡحَٰنَ ٱللَّهِ حِينَ تُمۡسُونَ وَحِينَ تُصۡبِحُونَ'
-                                    translation='Maka bertasbihlah kepada Allah di waktu kamu berada di petang hari dan waktu kamu berada di waktu subuh.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 18"
-                                    repeat={1}
-                                    arabicText='وَلَهُ ٱلۡحَمۡدُ فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَعَشِيّٗا وَحِينَ تُظۡهِرُونَ'
-                                    translation='Dan bagi-Nya-lah segala puji di langit dan di bumi dan di waktu kamu berada pada petang hari dan di waktu kamu berada di waktu Zuhur.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 19"
-                                    repeat={1}
-                                    arabicText='يُخۡرِجُ ٱلۡحَيَّ مِنَ ٱلۡمَيِّتِ وَيُخۡرِجُ ٱلۡمَيِّتَ مِنَ ٱلۡحَيِّ وَيُحۡيِ ٱلۡأَرۡضَ بَعۡدَ مَوۡتِهَاۚ وَكَذَٰلِكَ تُخۡرَجُونَ'
-                                    translation='Dia mengeluarkan yang hidup dari yang mati dan mengeluarkan yang mati dari yang hidup dan menghidupkan bumi sesudah matinya. Dan seperti itulah kamu akan dikeluarkan dari kubur.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 20"
-                                    repeat={1}
-                                    arabicText='وَمِنۡءَايَٰتِهِۦٓ أَنۡ خَلَقَكُم مِّن تُرَابٖ ثُمَّ إِذَآ أَنتُم بَشَرٞ تَنتَشِرُونَ'
-                                    translation='Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan kamu dari tanah, kemudian tiba-tiba kamu menjadi manusia yang berkembang biak.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 21"
-                                    repeat={1}
-                                    arabicText='وَمِنۡ ءَايَٰتِهِۦٓ أَنۡ خَلَقَ لَكُم مِّنۡ أَنفُسِكُمۡ أَزۡوَٰجٗا لِّتَسۡكُنُوٓاْ إِلَيۡهَا وَجَعَلَ بَيۡنَكُم مَّوَدَّةٗ وَرَحۡمَةًۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَتَفَكَّرُونَ'
-                                    translation='Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berfikir.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 22"
-                                    repeat={1}
-                                    arabicText='وَمِنۡ ءَايَٰتِهِۦ خَلۡقُ ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِ وَٱخۡتِلَٰفُ أَلۡسِنَتِكُمۡ وَأَلۡوَٰنِكُمۡۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّلۡعَٰلِمِينَ'
-                                    translation='Dan di antara tanda-tanda kekuasaan-Nya ialah menciptakan langit dan bumi dan berlain-lainan bahasamu dan warna kulitmu. Sesungguhnya pada yang demikan itu benar-benar terdapat tanda-tanda bagi orang-orang yang mengetahui.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 23"
-                                    repeat={1}
-                                    arabicText='وَمِنۡ ءَايَٰتِهِۦ مَنَامُكُم بِٱلَّيۡلِ وَٱلنَّهَارِ وَٱبۡتِغَآؤُكُم مِّن فَضۡلِهِۦٓۚإِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَسۡمَعُونَ'
-                                    translation='Dan di antara tanda-tanda kekuasaan-Nya ialah tidurmu di waktu malam dan siang hari dan usahamu mencari sebagian dari karunia-Nya. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang mendengarkan.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 24"
-                                    repeat={1}
-                                    arabicText='وَمِنۡءَايَٰتِهِۦ يُرِيكُمُ ٱلۡبَرۡقَ خَوۡفٗا وَطَمَعٗا وَيُنَزِّلُ مِنَ ٱلسَّمَآءِمَآءٗ فَيُحۡيِۦبِهِ ٱلۡأَرۡضَ بَعۡدَ مَوۡتِهَآۚ إِنَّ فِي ذَٰلِكَ لَأٓيَٰتٖ لِّقَوۡمٖ يَعۡقِلُونَ'
-                                    translation='Dan di antara tanda-tanda kekuasaan-Nya, Dia memperlihatkan kepadamu kilat untuk menimbulkan ketakutan dan harapan, dan Dia menurunkan hujan dari langit, lalu menghidupkan bumi dengan air itu sesudah matinya. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang mempergunakan akalnya.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 25"
-                                    repeat={1}
-                                    arabicText='وَمِنۡ ءَايَٰتِهِۦٓأَن تَقُومَ ٱلسَّمَآءُ وَٱلۡأَرۡضُ بِأَمۡرِهِۦۚ ثُمَّ إِذَا دَعَاكُمۡ دَعۡوَةٗ مِّنَ ٱلۡأَرۡضِ إِذَآ أَنتُمۡ تَخۡرُجُونَ'
-                                    translation='Dan di antara tanda-tanda kekuasaan-Nya ialah berdirinya langit dan bumi dengan iradat-Nya. Kemudian apabila Dia memanggil kamu sekali panggil dari bumi, seketika itu juga kamu keluar dari kubur.'
-                                />
-                                <AyatCard
-                                    title="Ar-Rum Ayat 26"
-                                    repeat={1}
-                                    arabicText='وَلَهُۥ مَن فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۖ كُلّٞ لَّهُۥ قَٰنِتُونَ'
-                                    translation='Dan kepunyaan-Nya-lah siapa saja yang ada di langit dan di bumi. Semuanya hanya kepada-Nya tunduk.'
-                                />
-                                <AyatCard
-                                    title="Ghafir Ayat 1"
-                                    repeat={1}
-                                    arabicText='حمٓ'
-                                    translation='Haa Miim.'
-                                />
-                                <AyatCard
-                                    title="Ghafir Ayat 2"
-                                    repeat={1}
-                                    arabicText='تَنزِيلُ ٱلۡكِتَٰبِ مِنَ ٱللَّهِ ٱلۡعَزِيزِ ٱلۡعَلِيمِ'
-                                    translation='Diturunkan Kitab ini (Al Quran) dari Allah Yang Maha Perkasa lagi Maha Mengetahui.'
-                                />
-                                <AyatCard
-                                    title="Ghafir Ayat 3"
-                                    repeat={1}
-                                    arabicText='غَافِرِ ٱلذَّنۢبِ وَقَابِلِ ٱلتَّوۡبِ شَدِيدِ ٱلۡعِقَابِ ذِي ٱلطَّوۡلِۖ لَآ إِلَٰهَ إِلَّاهُوَۖ إِلَيۡهِ ٱلۡمَصِيرُ'
-                                    translation='Yang Mengampuni dosa dan Menerima taubat lagi keras hukuman-Nya. Yang mempunyai karunia. Tiada Tuhan (yang berhak disembah) selain Dia. Hanya kepada-Nya-lah kembali (semua makhluk).'
-                                />
-                                <AyatCard
-                                    title="Al-Hasyr Ayat 22"
-                                    repeat={1}
-                                    arabicText='هُوَ ٱللَّهُ ٱلَّذِي لَآ إِلَٰهَ إِلَّا هُوَۖ عَٰلِمُ ٱلۡغَيۡبِ وَٱلشَّهَٰدَةِۖ هُوَ ٱلرَّحۡمَٰنُ ٱلرَّحِيمُ'
-                                    translation='Dialah Allah Yang tiada Tuhan selain Dia, Yang Mengetahui yang ghaib dan yang nyata, Dialah Yang Maha Pemurah lagi Maha Penyayang.'
-                                />
-                                <AyatCard
-                                    title="Al-Hasyr Ayat 23"
-                                    repeat={1}
-                                    arabicText='هُوَ ٱللَّهُ ٱلَّذِي لَآ إِلَٰهَ إِلَّا هُوَ ٱلۡمَلِكُ ٱلۡقُدُّوسُ ٱلسَّلَٰمُ ٱلۡمُؤۡمِنُ ٱلۡمُهَيۡمِنُ ٱلۡعَزِيزُ ٱلۡجَبَّارُ ٱلۡمُتَكَبِّرُۚ سُبۡحَٰنَ ٱللَّهِ عَمَّا يُشۡرِكُونَ'
-                                    translation='Dialah Allah Yang tiada Tuhan selain Dia, Raja, Yang Maha Suci, Yang Maha Sejahtera, Yang Mengaruniakan Keamanan, Yang Maha Memelihara, Yang Maha Perkasa, Yang Maha Kuasa, Yang Memiliki segala Keagungan, Maha Suci Allah dari apa yang mereka persekutukan.'
-                                />
-                                <AyatCard
-                                    title="Al-Hasyr Ayat 24"
-                                    repeat={1}
-                                    arabicText='هُوَ ٱللَّهُ ٱلۡخَٰلِقُ ٱلۡبَارِئُ ٱلۡمُصَوِّرُۖ لَهُ ٱلۡأَسۡمَآءُ ٱلۡحُسۡنَىٰۚ يُسَبِّحُ لَهُۥ مَا فِي ٱلسَّمَٰوَٰتِ وَٱلۡأَرۡضِۖ وَهُوَ ٱلۡعَزِيزُ ٱلۡحَكِيمُ'
-                                    translation='Dialah Allah Yang Menciptakan, Yang Mengadakan, Yang Membentuk Rupa, Yang Mempunyai Asmaaul Husna. Bertasbih kepada-Nya apa yang di langit dan bumi. Dan Dialah Yang Maha Perkasa lagi Maha Bijaksana.'
-                                />
-                                <AyatCard
-                                    title="Az-Zalzalah"
-                                    repeat={1}
-                                    arabicText='بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ'
-                                    translation='Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.'
-                                    centered
-                                />
-                                <AyatCard
-                                    title="Az-Zalzalah"
-                                    repeat={1}
-                                    arabicText='إِذَا زُلۡزِلَتِ ٱلۡأَرۡضُ زِلۡزَالَهَا ١ وَأَخۡرَجَتِ ٱلۡأَرۡضُ أَثۡقَالَهَا ٢ وَقَالَ ٱلۡإِنسَٰنُ مَا لَهَا ٣ يَوۡمَئِذٖ تُحَدِّثُ أَخۡبَارَهَا ٤ بِأَنَّ رَبَّكَ أَوۡحَىٰ لَهَا ٥ يَوۡمَئِذٖ يَصۡدُرُ ٱلنَّاسُ أَشۡتَاتٗا لِّيُرَوۡاْ أَعۡمَٰلَهُمۡ ٦ فَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٍ خَيۡرٗا يَرَهُۥ ٧ وَمَن يَعۡمَلۡ مِثۡقَالَ ذَرَّةٖ شَرّٗا يَرَهُۥ ٨'
-                                    translation='Apabila bumi digoncangkan dengan goncangan (yang dahsyat) (1). dan bumi telah mengeluarkan beban-beban berat (yang dikandung)nya (2). dan manusia bertanya: "Mengapa bumi (menjadi begini)?" (3). Pada hari itu bumi menceritakan beritanya (4). karena sesungguhnya Tuhanmu telah memerintahkan (yang sedemikian itu) kepadanya (5). Pada hari itu manusia ke luar dari kuburnya dalam keadaan bermacam-macam, supaya diperlihatkan kepada mereka (balasan) pekerjaan mereka (6). Barangsiapa yang mengerjakan kebaikan seberat dzarrahpun, niscaya dia akan melihat (balasan)nya (7). Dan barangsiapa yang mengerjakan kejahatan sebesar dzarrahpun, niscaya dia akan melihat (balasan)nya pula (8).'
-                                />
-                                <AyatCard
-                                    title="Al-Kafirun"
-                                    repeat={1}
-                                    arabicText='بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ'
-                                    translation='Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.'
-                                    centered
-                                />
-                                <AyatCard
-                                    title="Al-Kafirun"
-                                    repeat={1}
-                                    arabicText='قُلۡ يَٰٓأَيُّهَا ٱلۡكَٰفِرُونَ ١ لَآ أَعۡبُدُ مَا تَعۡبُدُونَ ٢ وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ ٣ وَلَآ أَنَا۠ عَابِدٞ مَّا عَبَدتُّمۡ ٤ وَلَآ أَنتُمۡ عَٰبِدُونَ مَآ أَعۡبُدُ ٥ لَكُمۡ دِينُكُمۡ وَلِيَ دِينِ ٦'
-                                    translation='Katakanlah: "Hai orang-orang kafir (1). Aku tidak akan menyembah apa yang kamu sembah (2). Dan kamu bukan penyembah Tuhan yang aku sembah (3). Dan aku tidak pernah menjadi penyembah apa yang kamu sembah (4). Dan kamu tidak pernah (pula) menjadi penyembah Tuhan yang aku sembah (5). Untukmu agamamu, dan untukkulah, agamaku" (6).'
-                                />
-                                <AyatCard
-                                    title="An-Nashr"
-                                    repeat={1}
-                                    arabicText='بِسۡمِ ٱللَّهِ ٱلرَّحۡمَٰنِ ٱلرَّحِيمِ'
-                                    translation='Dengan menyebut nama Allah Yang Maha Pemurah lagi Maha Penyayang.'
-                                    centered
-                                />
-                                <AyatCard
-                                    title="An-Nashr"
-                                    repeat={1}
-                                    arabicText='إِذَا جَآءَ نَصۡرُ ٱللَّهِ وَٱلۡفَتۡحُ ١ وَرَأَيۡتَ ٱلنَّاسَ يَدۡخُلُونَ فِي دِينِ ٱللَّهِ أَفۡوَاجٗا ٢ فَسَبِّحۡ بِحَمۡدِ رَبِّكَ وَٱسۡتَغۡفِرۡهُۚ إِنَّهُۥكَانَ تَوَّابَۢا ٣'
-                                    translation='Apabila telah datang pertolongan Allah dan kemenangan (1). Dan kamu lihat manusia masuk agama Allah dengan berbondong-bondong (2). Maka bertasbihlah dengan memuji Tuhanmu dan mohonlah ampun kepada-Nya. Sesungguhnya Dia adalah Maha Penerima taubat (3).'
                                 />
                                 <AyatCard
                                     title="Al-Ikhlas"
@@ -550,7 +342,7 @@ export default function PagiKubro() {
 
                             <div className="mt-8 flex justify-center gap-4">
                                 <Button className="bg-secondary hover:bg-secondary/90">
-                                    <Link href="/sore-kubro" className="flex items-center">
+                                    <Link href="/sore-sughro" className="flex items-center">
                                         Al-Matsurat Sore
                                         <ArrowRight className="ml-2 h-4 w-4" />
                                     </Link>
@@ -620,7 +412,7 @@ export default function PagiKubro() {
                                 </Link>
                             </Button>
                             <Button className="bg-secondary hover:bg-secondary/90">
-                                <Link href="/sore-kubro" className="flex items-center">
+                                <Link href="/sore-sughro" className="flex items-center">
                                     Al-Matsurat Sore
                                     <ArrowRight className="ml-2 h-4 w-4" />
                                 </Link>

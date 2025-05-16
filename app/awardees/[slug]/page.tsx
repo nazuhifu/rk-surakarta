@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Calendar, GraduationCap, Quote, Star, User, Instagram } from "lucide-react";
 import { client } from "@/sanity/lib/client";
@@ -87,7 +85,6 @@ export default async function AwardeeProfile({ params }: Props) {
     if (!awardee) {
         return (
             <div className="flex flex-col min-h-screen">
-                <Navbar />
                 <main className="my-10 flex-1 flex items-center justify-center">
                     <div className="text-center">
                         <h1 className="text-2xl font-bold mb-4">Data tidak tersedia</h1>
@@ -97,14 +94,12 @@ export default async function AwardeeProfile({ params }: Props) {
                         </Button>
                     </div>
                 </main>
-                <Footer />
             </div>
         );
     }
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-1">
                 {/* Hero Section */}
                 <section className="relative h-[50vh] min-h-[400px]">
@@ -311,16 +306,6 @@ export default async function AwardeeProfile({ params }: Props) {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
-}
-
-interface RelatedAwardeeCardProps {
-    name?: string | null;
-    university?: string | null;
-    program?: string | null;
-    year?: string | null;
-    image: string;
-    slug?: string;
 }

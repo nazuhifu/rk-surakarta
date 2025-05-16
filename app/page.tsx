@@ -3,8 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ArrowRight, Calendar, ChevronRight } from "lucide-react";
 import { client } from "@/sanity/lib/client";
@@ -174,7 +172,6 @@ export default function Home() {
 
     return (
         <div className="flex flex-col min-h-screen">
-            <Navbar />
             <main className="flex-1">
                 {/* Hero Section */}
                 <section className="relative py-20 md:py-28 bg-gradient-to-b from-primary/5 to-transparent dark:from-primary/10 dark:to-transparent overflow-hidden">
@@ -376,7 +373,6 @@ export default function Home() {
                     </div>
                 </section>
             </main>
-            <Footer />
         </div>
     );
 }
