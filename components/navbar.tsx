@@ -121,18 +121,32 @@ export function Navbar() {
           <div className="space-y-2 pl-4 border-l-2 border-gray-200 dark:border-gray-700">
             <h3 className="text-sm font-medium">Al-Matsurat</h3>
             <Link
+              href="/pagi-sughro"
+              className="block text-sm text-muted-foreground hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Pagi Sughro
+            </Link>
+            <Link
               href="/pagi-kubro"
               className="block text-sm text-muted-foreground hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
-              Al-Matsurat Pagi
+              Pagi Kubro
+            </Link>
+            <Link
+              href="/sore-sughro"
+              className="block text-sm text-muted-foreground hover:text-primary"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Sore Sughro
             </Link>
             <Link
               href="/sore-kubro"
               className="block text-sm text-muted-foreground hover:text-primary"
               onClick={() => setIsMenuOpen(false)}
             >
-              Al-Matsurat Sore
+              Sore Kubro
             </Link>
           </div>
 
