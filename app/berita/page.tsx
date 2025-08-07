@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useMemo } from "react";
 import { groq } from "next-sanity";
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 import SearchInput from "@/components/search-input";
 import BeritaCard from "@/components/berita-card";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Berita = {
   _id: string;
@@ -58,16 +59,46 @@ export default function BeritaPage() {
     fetchData();
   }, []);
 
-  const handleSearch = useCallback((keyword: string) => {
-    const lower = keyword.toLowerCase();
-    const result = data.filter((item) => {
-      const matchTitle = item.title.toLowerCase().includes(lower);
-      const matchContent = item.content?.some((block: any) => block._type === "block" && block.children?.some((span: any) => span.text?.toLowerCase().includes(lower)));
-      return matchTitle || matchContent;
-    });
-    setFiltered(result);
-    setVisibleCount(6);
-  }, [data]);
+  const handleSearch = useCallback(
+    (keyword: string) => {
+      if (!keyword.trim()) {
+        setFiltered(data);
+        setVisibleCount(6);
+        return;
+      }
+
+      const lower = keyword.toLowerCase().trim();
+      const result = data.filter((item) => {
+        const matchTitle = item.title.toLowerCase().includes(lower);
+        const matchCategory = item.category?.toLowerCase().includes(lower);
+        const matchContent = item.content?.some((block: any) => block._type === "block" && block.children?.some((span: any) => span.text?.toLowerCase().includes(lower)));
+        return matchTitle || matchCategory || matchContent;
+      });
+      setFiltered(result);
+      setVisibleCount(6);
+    },
+    [data]
+  );
+
+  const handleLoadMore = useCallback(() => {
+    setVisibleCount((prev) => Math.min(prev + 6, filtered.length));
+  }, [filtered.length]);
+
+  const hasMoreItems = useMemo(() => visibleCount < filtered.length, [visibleCount, filtered.length]);
+
+  const LoadingSkeleton = () => (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {Array.from({ length: 6 }).map((_, index) => (
+        <div key={index} className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border">
+          <Skeleton className="h-48 w-full rounded-lg mb-4" />
+          <Skeleton className="h-4 w-3/4 mb-2" />
+          <Skeleton className="h-4 w-1/2 mb-4" />
+          <Skeleton className="h-16 w-full mb-4" />
+          <Skeleton className="h-4 w-1/3" />
+        </div>
+      ))}
+    </div>
+  );
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -82,26 +113,54 @@ export default function BeritaPage() {
 
         <section className="py-12 bg-gray-50 dark:bg-gray-900">
           <div className="container">
-            {isLoading && <p className="text-center text-muted-foreground">Sedang memuat berita...</p>}
-            {error && <p className="text-center text-red-500">{error}</p>}
-            {!isLoading && !error && data.length > 0 && filtered.length === 0 && <p className="text-center text-muted-foreground">Tidak ditemukan berita dengan kata kunci tersebut.</p>}
-            {!isLoading && !error && filtered.length > 0 && (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filtered.slice(0, visibleCount).map((item) => (
-                  <BeritaCard key={item._id} data={item} />
-                ))}
-              </div>
-            )}
-            {!isLoading && !error && visibleCount < filtered.length && (
-              <div className="text-center mt-8">
-                <button
-                  onClick={() => setVisibleCount((prev) => prev + 6)}
-                  className="px-6 py-2 text-sm font-medium rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition"
-                  aria-label="Tampilkan lebih banyak berita"
-                >
-                  Tampilkan Lebih Banyak
+            {isLoading && <LoadingSkeleton />}
+
+            {error && (
+              <div className="text-center py-12">
+                <p className="text-red-500 mb-4">{error}</p>
+                <button onClick={() => window.location.reload()} className="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                  Coba Lagi
                 </button>
               </div>
+            )}
+
+            {!isLoading && !error && data.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground">Belum ada berita tersedia.</p>
+              </div>
+            )}
+
+            {!isLoading && !error && data.length > 0 && filtered.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-muted-foreground mb-4">Tidak ditemukan berita dengan kata kunci tersebut.</p>
+                <button
+                  onClick={() => {
+                    setFiltered(data);
+                    setVisibleCount(6);
+                  }}
+                  className="px-6 py-2 text-primary border border-primary rounded-full hover:bg-primary hover:text-white transition-colors"
+                >
+                  Tampilkan Semua Berita
+                </button>
+              </div>
+            )}
+
+            {!isLoading && !error && filtered.length > 0 && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {filtered.slice(0, visibleCount).map((item) => (
+                    <BeritaCard key={item._id} data={item} />
+                  ))}
+                </div>
+
+                {hasMoreItems && (
+                  <div className="text-center mt-8">
+                    <button onClick={handleLoadMore} className="px-6 py-2 text-sm font-medium rounded-full border border-primary text-primary hover:bg-primary hover:text-white transition-colors" aria-label="Tampilkan lebih banyak berita">
+                      Tampilkan Lebih Banyak ({filtered.length - visibleCount} tersisa)
+                    </button>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </section>
