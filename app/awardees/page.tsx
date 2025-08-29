@@ -234,8 +234,8 @@ function AwardeeCard({ name, role, program, year, image, slug }: AwardeeCardProp
 
   return (
     <Link href={`/awardees/${targetSlug}`} aria-label={`Lihat profil ${name}`}>
-      <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all group cursor-pointer focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2">
-        <div className="relative h-64 overflow-hidden">
+      <div className="bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-all group cursor-pointer focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 h-full flex flex-col">
+        <div className="relative h-64 overflow-hidden shrink-0">
           <Image
             src={image || "/images/placeholder-avatar.png"}
             alt={name ? `Foto ${name}` : "Foto awardee"}
@@ -245,12 +245,12 @@ function AwardeeCard({ name, role, program, year, image, slug }: AwardeeCardProp
           />
           <div className="absolute top-4 right-4 bg-secondary text-white text-xs font-medium px-2 py-1 rounded">{year}</div>
         </div>
-        <div className="p-6">
-          <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors">{name || "Nama Tidak Tersedia"}</h3>
-          <p className="text-muted-foreground text-sm mb-2">{role || "Role Tidak Tersedia"}</p>
-          <div className="flex items-center gap-2">
+        <div className="p-6 flex flex-col grow">
+          <h3 className="font-semibold text-lg mb-1 group-hover:text-primary transition-colors clamp-2">{name || "Nama Tidak Tersedia"}</h3>
+          <p className="text-muted-foreground text-sm mb-2 clamp-1">{role || "Role Tidak Tersedia"}</p>
+          <div className="flex items-center gap-2 mt-auto">
             <GraduationCap className="h-4 w-4 text-primary" />
-            <span className="text-sm">{program || "Program Tidak Tersedia"}</span>
+            <span className="text-sm clamp-1">{program || "Program Tidak Tersedia"}</span>
           </div>
         </div>
       </div>
