@@ -69,8 +69,8 @@ export default function PagiSughro() {
 
         {/* Al-Mathurat Content */}
         <section className="py-12">
-          <div className="mx-auto max-w-4xl px-2 sm:px-4 text-base md:text-lg">
-            <div className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-8 reveal">
+          <div className="mx-auto max-w-4xl px-1 sm:px-4 text-base md:text-lg">
+            <div className="bg-white dark:bg-gray-800 p-4 sm:p-8 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 mb-8 reveal">
               <div className="flex justify-between items-center mb-6">
                 <h2 className="text-2xl font-semibold flex items-center">
                   <Sun className="mr-2 h-5 w-5 text-primary" />
@@ -82,7 +82,9 @@ export default function PagiSughro() {
                 {loading ? (
                   <div className="text-center text-muted-foreground">Memuat dzikir & doa...</div>
                 ) : items.length > 0 ? (
-                  items.map((item) => <AyatCard key={item.id} title={item.title} repeat={item.repeat} arabicText={item.arabic} translation={item.translation_id} centered={item.title === "Ta'awudz" || item.title === "Basmalah"} />)
+                  items.map((item, index) => (
+                    <AyatCard key={item.id} title={item.title} repeat={item.repeat} arabicText={item.arabic} translation={item.translation_id} centered={item.title === "Ta'awudz" || item.title === "Basmalah"} isFirstCard={index === 0} />
+                  ))
                 ) : (
                   <div className="text-center text-muted-foreground">Tidak ada data yang tersedia</div>
                 )}

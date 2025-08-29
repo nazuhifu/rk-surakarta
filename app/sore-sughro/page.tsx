@@ -82,7 +82,9 @@ export default function SoreSughro() {
                 {loading ? (
                   <div className="text-center text-muted-foreground">Memuat dzikir & doa...</div>
                 ) : items.length > 0 ? (
-                  items.map((item) => <AyatCard key={item.id} title={item.title} repeat={item.repeat} arabicText={item.arabic} translation={item.translation_id} centered={item.title === "Ta'awudz" || item.title === "Basmalah"} />)
+                  items.map((item, index) => (
+                    <AyatCard key={item.id} title={item.title} repeat={item.repeat} arabicText={item.arabic} translation={item.translation_id} centered={item.title === "Ta'awudz" || item.title === "Basmalah"} isFirstCard={index === 0} />
+                  ))
                 ) : (
                   <div className="text-center text-muted-foreground">Tidak ada data yang tersedia</div>
                 )}
